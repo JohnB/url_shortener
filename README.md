@@ -18,7 +18,7 @@ Please compile your project into a Github repo and provide a link upon completio
 ## Assumptions (to be clarified with imaginary PM)
 
 * When you say “proxy”, I assume you mean a 301-redirect response - which is what the https://goo.gl/ shortener does.
-* “URL less than 8 characters” I assume means the “path” portion of the URL - I can't afford a really short domain name.
+* “URL less than 8 characters” I assume means the “path” portion of the URL - I can't afford a really short domain name (and even `bit.ly/` takes up 7 characters so a _true_ 8-character shortener would only handle a pointlessly small set of URLs).
 * I’ll make it case insensitive and disallow similar characters, so people can more easily type it when they’re using a mobile browser. The downside of this is that eight characters can only support _142 giga-URLs_ (152587890625) - but it may take a long while to exhaust the address space.
 
 ## Roadmap (POC -> MVP -> Pain -> Scalable)
@@ -40,5 +40,5 @@ open http://localhost:3000/
 
 ## Known Issues
 
-1. Zero tests.
+1. Sub-minimal tests.
 2. No retries for random (less than 1 in 100 billion) collisions when creating a short URL - the user will get a uniqueness-constraint error (but it will probably work fine if they just retry).
