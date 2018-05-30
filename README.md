@@ -9,11 +9,9 @@ Write a URL shortening service. It should meet the following requirements:
 * The shortened URL should be less than 8 characters long.
 
 Additional points:
-* How would you scale this service to millions of users? _JohnB: See item 4 in the roadmap below._
-* How would provide analytics or usage metrics on this service? _JohnB: when a short URL is created, used or not found, initiate some background task to update the appropriate metrics (it should not block or slow down the URL-shortening process)._
-* What useful additional feature would you add to this service? _JohnB: Rickroll random users._
-
-Please compile your project into a Github repo and provide a link upon completion. Let me know if you have any questions! Once this is completed, we'll move to an onsite where we will review your code and you can meet the entire team.
+* How would you scale this service to millions of users? _JohnB: See item 4 in the [roadmap](https://github.com/JohnB/url_shortener#roadmap-poc---mvp---pain---scalable) below._
+* How would provide analytics or usage metrics on this service? _JohnB: when a short URL is created, used, or not found, initiate some background task to update the appropriate metrics (it should not block or slow down the URL-shortening process)._
+* What useful additional feature would you add to this service? _JohnB: See [Known Issues](https://github.com/JohnB/url_shortener#known-issues) section, below._
 
 ## Assumptions (to be clarified with imaginary PM)
 
@@ -40,5 +38,7 @@ open http://localhost:3000/
 
 ## Known Issues
 
+1. Has no concept of users, authentication, or security - anyone can create (or update!) short URLs.
 1. Sub-minimal tests.
-2. No retries for random (less than 1 in 100 billion) collisions when creating a short URL - the user will get a uniqueness-constraint error (but it will probably work fine if they just retry).
+1. No retries for random (less than 1 in 100 billion) collisions when creating a short URL - the user will get a uniqueness-constraint error (but it will probably work fine if they just retry).
+1. Does not yet RickRoll random users.
