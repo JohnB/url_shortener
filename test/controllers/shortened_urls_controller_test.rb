@@ -18,7 +18,7 @@ class ShortenedUrlsControllerTest < ActionController::TestCase
 
   test "should create shortened_url" do
     assert_difference('ShortenedUrl.count') do
-      post :create, shortened_url: { long_url: @shortened_url.long_url, short_url: @shortened_url.short_url }
+      post :create, shortened_url: { long_url: "http://#{rand}" }
     end
 
     assert_redirected_to shortened_url_path(assigns(:shortened_url))
@@ -36,7 +36,7 @@ class ShortenedUrlsControllerTest < ActionController::TestCase
 
   test "should update shortened_url" do
     patch :update, id: @shortened_url, shortened_url: { long_url: @shortened_url.long_url, short_url: @shortened_url.short_url }
-    assert_redirected_to shortened_url_path(assigns(:shortened_url))
+    assert_response :success
   end
 
   test "should destroy shortened_url" do
