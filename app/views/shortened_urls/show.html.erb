@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Short url:</strong>
-  <%= @shortened_url.short_url %>
+  Short url:
+  <strong><%= @shortened_url.short_url %></strong>
+  will redirect to
+  <strong><%= @shortened_url.long_url %></strong>
+  (<%= link_to "TEST", "/" + @shortened_url.short_url, target: 'none' %> - opens in new tab)
 </p>
 
 <p>
-  <strong>Long url:</strong>
-  <%= @shortened_url.long_url %>
+  <a href="/">Create another short URL</a>
 </p>
-
-<%= link_to 'Edit', edit_shortened_url_path(@shortened_url) %> |
-<%= link_to 'Back', shortened_urls_path %>
