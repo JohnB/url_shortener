@@ -20,7 +20,6 @@ Please compile your project into a Github repo and provide a link upon completio
 * When you say “proxy”, I assume you mean a 301-redirect response - which is what the https://goo.gl/ shortener does.
 * “URL less than 8 characters” I assume means the “path” portion of the URL.
 * I’ll make it case insensitive so people can more easily type it when they’re using a mobile browser - but it means we’d have to go to *nine* digits once we scale beyond about _2000 giga-URLs_ (2821109907456).
-* And I’d like to “waste” another one of these 8 characters on a check digit and reduce it further by treating I and 1 and l and L the same (and o and O and 0, etc) - which would *limit us to around _7 giga-URLs_* before we scale to 9 characters.
 
 ## Roadmap (POC -> MVP -> Pain -> Scalable)
 
